@@ -1,16 +1,32 @@
-import random
-import requests
+def sum_numbers(a: int, b: int) -> int:
+    return a + b
 
-breed_url = requests.get("https://dog.ceo/api/breeds/list/all")
-my_keys = breed_url.json()['message']
-key_list = list(my_keys.keys())
-print(key_list)
-user_choice = input("select breed\n")
-user_url = requests.get(f"https://dog.ceo/api/breed/{user_choice}/images")
-response = user_url.json()['message']
-random_url = random.choice(response)
-print(random_url)
-data = requests.get(random_url).content
-f = open(f'{user_choice}.png', 'wb')
-f.write(data)
-f.close()
+
+def divide_numbers(a: int, b: int) -> float:
+    return a / b
+
+
+def sub_numbers(a: int, b: int) -> int:
+    return a - b
+
+
+def mult_numbers(a:int, b: int) -> int:
+    return a * b
+
+
+first_input = input("number")
+action_input = input("action")
+last_input = input("number")
+print(input, action_input, last_input)
+
+if action_input == '+':
+    result = sum_numbers(int(first_input),int(last_input))
+elif action_input == '/':
+    result = divide_numbers(int(first_input), int(last_input))
+elif action_input == '-':
+    result = sub_numbers(int(first_input), int(last_input))
+elif action_input == '*':
+    result =mult_numbers(int(first_input), int(last_input))
+
+print(result)
+
