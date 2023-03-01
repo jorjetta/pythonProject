@@ -21,6 +21,8 @@ def power_numbers(a: int,b: int) -> int:
     return c
 
 
+
+
 first_input = input("number")
 action_input = input("action")
 last_input = input("number")
